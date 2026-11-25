@@ -1,0 +1,47 @@
+@host = https://localhost:7105
+@ownerPassword = SET_YOUR_BOOTSTRAP_OWNER_PASSWORD
+@superAdminPassword = SET_YOUR_BOOTSTRAP_SUPERADMIN_PASSWORD
+@token = PASTE_ACCESS_TOKEN_FROM_LOGIN
+
+### Tenant A login (copy accessToken to token above)
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "owner",
+  "password": "{{ownerPassword}}",
+  "tenantId": "tenant-a"
+}
+
+### Identity associated with the token
+GET {{host}}/auth/me
+Authorization: Bearer {{token}}
+
+### Customers in the authorized tenant database
+GET {{host}}/crm/customers
+Authorization: Bearer {{token}}
+
+### Job orders and billing
+GET {{host}}/crm/job-orders
+Authorization: Bearer {{token}}
+
+### Assigned service tasks
+GET {{host}}/crm/job-tasks
+Authorization: Bearer {{token}}
+
+### Payment history
+GET {{host}}/crm/payments
+Authorization: Bearer {{token}}
+
+### Super Admin login: omit tenantId for platform administration
+POST {{host}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "superadmin",
+  "password": "{{superAdminPassword}}"
+}
+
+### Use the Super Admin token for this request
+GET {{host}}/master/tenants
+Authorization: Bearer {{token}}

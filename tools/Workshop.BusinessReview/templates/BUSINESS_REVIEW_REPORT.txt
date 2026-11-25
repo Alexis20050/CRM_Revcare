@@ -1,0 +1,141 @@
+REVCARE AUTO HUB — BUSINESS REVIEW AND DEPLOYMENT READINESS
+24 November 2026, Asia/Manila
+
+RECOMMENDATION: retain historical compatibility; do not deploy or reconstruct.
+This package uses saved evidence only. No database was connected to, no historical
+financial record was changed, and no production reconciliation was executed.
+Changes are confined to a new review package and new offline packaging/verification
+tools. Existing application source and prior review artifacts were not edited.
+
+Open index.html for the read-only staff report. All registers also have exact-value
+JSON versions. Decimal amounts are serialized as two-decimal strings, not floats.
+
+RECORDS REQUIRING HUMAN REVIEW
+
+154 estimates: all explicitly marked backfilled in stored Notes; none has verified
+original customer approval evidence. Of these, 123 match their itemized sums and
+31 do not. Arithmetic agreement is not historical approval. Stored statuses are
+150 Approved and 4 Draft. All 154 approval timestamps equal source job StartedAt,
+including the Draft records. Preserve those stored assertions while qualifying
+them as unverified; do not silently clear or reinterpret them.
+
+31 discrepancies: Estimates #1–#30 and #32. Their stored estimate totals equal
+their authoritative JobOrder.TotalEstimatedCost values, but their line totals
+do not. Combined job-minus-itemization difference is PHP 152,000.00. See the
+separate discrepancies-31.html / .json / .txt register for every job/customer,
+authoritative amount, stored estimate amount, existing itemized sum, exact signed
+difference, reference and evidence. No difference is classified as parts, supplies,
+discounts, fees or a missing payment. Every line's quantity-times-unit-price agrees
+with its recorded line total. Twenty estimates have repeated identical line content;
+this is a review signal, not proof of duplicate charging or authority to remove lines.
+
+603 historical task prices: all currently match catalog values. Zero have verified
+historical agreement evidence, and zero have individually confirmed catalog-assignment
+audit provenance. Their category is Catalog-compatible; row-level source unverified.
+The archived reconciler's catalog-fill mechanism and audit bypass explain a possible
+source, but matching values do not prove each row's origin. task-price-register.json
+contains all 603 IDs, job/customer/service, recorded/catalog amounts, evidence,
+classification and pending reviewer/decision fields. Do not promote these values
+to agreed historical prices or use them to replace job totals.
+
+30 absent job IDs: #542–#571. The earlier wording "24 audit references" means 24
+distinct job IDs with 78 surviving audit events, not 24 events. These comprise
+42 Payment, 24 JobTask, 6 Complaint and 6 Feedback Added events. No matched event
+is a deletion. Six groups of five IDs each have the same 13-event pattern. Test
+references and cleanup code are consistent with test activity, but do not prove
+the cause of absence for every ID. IDs 545, 550, 555, 560, 565 and 570 have no direct
+positive-key audit reference. Missing-job register includes every event ID, UTC
+time, actor, matched key field and original change payload. Do not reconstruct
+jobs/receipts, assume never-used IDs, or describe these as confirmed deletions.
+
+Previously reviewed 17 payer/purpose classifications and treatment of 200 fictional
+seed jobs still require business decisions. This package does not reclassify them.
+
+RECORDS AND FACTS SUPPORTED BY AVAILABLE EVIDENCE
+
+The exports support what was recorded: actual job/estimate/task/receipt keys and
+values, the backfill Notes, the stored references, and the surviving audit events.
+They do not independently establish the commercial validity of every amount.
+All 154 estimate totals agree with corresponding authoritative job totals; 123
+also agree with itemized sums. Estimate #154's source job is identified by its
+backfill note; it has no stored job-estimate link. The register preserves that
+distinction rather than treating the association as approved linkage.
+
+The seed-key map documents cloud #572–#771 and local #7016–#7215 using actual keys
+and reserved customer identities. Original seed job totals have source/audit support
+as fictional seeded values; that is not task-price agreement evidence. The earlier
+#542–#741 range is not the actual seed cohort.
+
+UNRESOLVED INFORMATION
+
+Original quotations/authorizations; actual task-price assignment source/time;
+customer approval identities/timestamps; cause of absent keys; any external
+charge documentation; payer identity/purpose where unverified; provider backup
+inventory, account retention and recoverability. Unknowns remain explicit.
+
+COMPLETED LOCAL SAFEGUARDS AND USABILITY VERIFICATION
+
+Prior local evidence: 43 compatibility checks and 52 regression checks passed,
+including actual reconciliation-service interruption, cancellation, concurrency,
+repeat execution and financial preservation. The actual service is read-only;
+there is no estimate-writing transaction whose rollback has been certified.
+Those saved logs were reviewed, not relabeled as newly executed tests.
+
+New offline verification: all 247 unlinked historical jobs retain customer records,
+recorded tasks, authoritative billing calculations and workshop-document rendering.
+235 existing receipts render with the original amounts, customer identity and a
+qualified Recorded Job Total. Jobs #530–#541 have no recorded receipts: twelve
+empty histories remain explicitly empty, not recovered/invented. Source evidence
+hashes are unchanged. See usability-verification.json. This exercises the existing
+application calculation/report classes, not a replacement calculator alone. It
+does not claim a new live production or GUI end-to-end test.
+
+Application safeguards previously implemented: historical amount/service locks,
+save-time protection, qualified receipt labels, preserved null/zero values and
+Unknown defaults for new payer/purpose values. Limits remain: old binaries, direct
+SQL, bulk imports, current database defaults and records outside the reviewed
+inventory are not protected by these application guards. No schema change or
+new approval workflow was introduced for this package.
+
+READ-ONLY REVIEW PROPOSAL
+
+The supplied HTML report is immediately usable offline for inspection, with separate
+estimate, discrepancy, task, missing-ID and historical-job registers. Browser Find
+locates IDs; evidence expands per row. It has no forms, scripts, Save/Apply/Approve
+actions, database connection or remote dependencies. File access must be limited
+to authorized workshop staff; the report does not provide application authentication.
+review-workflow.txt specifies the proposed staff roles and separate append-only
+decision process. Review acceptance never itself authorizes financial corrections.
+
+REMAINING PRODUCTION BLOCKERS
+
+1. No actual MonsterASP provider backup has been downloaded and successfully restored
+   to a separate disposable database. Existing local .bak tests and BACPACs do not
+   satisfy this requirement. Header/source/version checks, integrity checks and
+   financial/schema comparison at the backup cutoff must be retained as evidence.
+2. Business sign-off is pending for compatibility reporting, fictional seed treatment,
+   evidence standards, and any proposed estimate/payment/ownership correction.
+3. Current inventory scope, old-client control, default/import behavior and a reviewed
+   release/rollback plan must be verified for the intended production deployment.
+4. Separate explicit cloud deployment or recovery authorization is absent.
+
+deployment-checklist.txt makes these mandatory stop/go gates with accountable owners
+and required evidence. No checklist item authorizes writes to db80735, db81188 or
+db81189. Historical itemization need not be fabricated to keep records usable.
+
+EXACT COMMANDS USED
+
+python tools/Workshop.BusinessReview/build_package.py
+PASS: new package, 154 estimates / 31 discrepancies / 603 tasks / 30 absent keys /
+78 audit events / 247 usability rows. Uses Decimal arithmetic; no DB access.
+
+dotnet build tools/Workshop.BusinessReview/Workshop.BusinessReview.csproj -c Release --nologo --disable-build-servers -m:1 -v:q
+PASS: zero warnings/errors after correcting a syntax error in the new verifier.
+
+dotnet run -c Release --no-build --project tools/Workshop.BusinessReview -- artifacts/business-review-20261124
+PASS: 247 workshop reports and billing views; 235 receipts; 12 explicit empty histories;
+original source files unchanged; no DB connections/saves/reconciliation/deployment.
+
+To reproduce, give build_package.py a NEW --output directory, then pass that directory
+to Workshop.BusinessReview. Both tools refuse to overwrite existing output files.
+source-manifest.json and PACKAGE_SHA256SUMS.txt identify evidence and deliverables.

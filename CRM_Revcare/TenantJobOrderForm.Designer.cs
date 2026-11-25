@@ -1,0 +1,80 @@
+namespace CRM_Revcare_;
+partial class TenantJobOrderForm
+{
+    private System.Windows.Forms.Label customerIdLabel;
+    private System.Windows.Forms.ComboBox customerIdInput;
+    private System.Windows.Forms.Label vehicleDetailsLabel;
+    private System.Windows.Forms.TextBox vehicleDetailsInput;
+    private System.Windows.Forms.Label totalEstimatedCostLabel;
+    private System.Windows.Forms.TextBox totalEstimatedCostInput;
+    private System.Windows.Forms.Label startedAtLabel;
+    private System.Windows.Forms.DateTimePicker startedAtInput;
+    private System.Windows.Forms.Label inquiryNotesLabel;
+    private System.Windows.Forms.TextBox inquiryNotesInput;
+    private System.Windows.Forms.Label requestedServicesLabel;
+    private System.Windows.Forms.CheckedListBox requestedServicesInput;
+    private void InitializeComponent()
+    {
+        fieldsLayout.SuspendLayout();
+        SuspendLayout();
+        customerIdLabel = new System.Windows.Forms.Label();
+        customerIdInput = new System.Windows.Forms.ComboBox();
+        customerIdLabel.Name = "customerIdLabel"; customerIdLabel.Text = "Customer *";
+        customerIdLabel.AutoSize = true; customerIdLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        customerIdInput.Name = "customerId"; customerIdInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        customerIdInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        customerIdInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        customerIdInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems; customerIdInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+        customerIdInput.DropDownWidth = 650;
+        fieldsLayout.Controls.Add(customerIdLabel, 0, 0); fieldsLayout.Controls.Add(customerIdInput, 1, 0);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        vehicleDetailsLabel = new System.Windows.Forms.Label();
+        vehicleDetailsInput = new System.Windows.Forms.TextBox();
+        vehicleDetailsLabel.Name = "vehicleDetailsLabel"; vehicleDetailsLabel.Text = "Vehicle details *";
+        vehicleDetailsLabel.AutoSize = true; vehicleDetailsLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        vehicleDetailsInput.Name = "vehicleDetails"; vehicleDetailsInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        vehicleDetailsInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        fieldsLayout.Controls.Add(vehicleDetailsLabel, 0, 1); fieldsLayout.Controls.Add(vehicleDetailsInput, 1, 1);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        totalEstimatedCostLabel = new System.Windows.Forms.Label();
+        totalEstimatedCostInput = new System.Windows.Forms.TextBox();
+        totalEstimatedCostLabel.Name = "totalEstimatedCostLabel"; totalEstimatedCostLabel.Text = "Approved estimate";
+        totalEstimatedCostLabel.AutoSize = true; totalEstimatedCostLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        totalEstimatedCostInput.Name = "totalEstimatedCost"; totalEstimatedCostInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        totalEstimatedCostInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        fieldsLayout.Controls.Add(totalEstimatedCostLabel, 0, 2); fieldsLayout.Controls.Add(totalEstimatedCostInput, 1, 2);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        startedAtLabel = new System.Windows.Forms.Label();
+        startedAtInput = new System.Windows.Forms.DateTimePicker();
+        startedAtLabel.Name = "startedAtLabel"; startedAtLabel.Text = "Started at";
+        startedAtLabel.AutoSize = true; startedAtLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        startedAtInput.Name = "startedAt"; startedAtInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        startedAtInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        startedAtInput.Format = System.Windows.Forms.DateTimePickerFormat.Custom; startedAtInput.CustomFormat = "yyyy-MM-dd HH:mm";
+        fieldsLayout.Controls.Add(startedAtLabel, 0, 3); fieldsLayout.Controls.Add(startedAtInput, 1, 3);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        inquiryNotesLabel = new System.Windows.Forms.Label();
+        inquiryNotesInput = new System.Windows.Forms.TextBox();
+        inquiryNotesLabel.Name = "inquiryNotesLabel"; inquiryNotesLabel.Text = "Intake notes";
+        inquiryNotesLabel.AutoSize = true; inquiryNotesLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        inquiryNotesInput.Name = "inquiryNotes"; inquiryNotesInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        inquiryNotesInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        inquiryNotesInput.Multiline = true; inquiryNotesInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical; inquiryNotesInput.Height = 100;
+        fieldsLayout.Controls.Add(inquiryNotesLabel, 0, 4); fieldsLayout.Controls.Add(inquiryNotesInput, 1, 4);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        requestedServicesLabel = new System.Windows.Forms.Label();
+        requestedServicesInput = new System.Windows.Forms.CheckedListBox();
+        requestedServicesLabel.Name = "requestedServicesLabel"; requestedServicesLabel.Text = "Requested services *";
+        requestedServicesLabel.AutoSize = true; requestedServicesLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        requestedServicesInput.Name = "requestedServices"; requestedServicesInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        requestedServicesInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        requestedServicesInput.CheckOnClick = true; requestedServicesInput.Height = 180;
+        fieldsLayout.Controls.Add(requestedServicesLabel, 0, 5); fieldsLayout.Controls.Add(requestedServicesInput, 1, 5);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        fieldsLayout.RowCount = 6;
+        Text = "RevCare Auto Hub CRM";
+        fieldsLayout.ResumeLayout(false); fieldsLayout.PerformLayout();
+        ResumeLayout(false);
+    }
+}
+

@@ -1,0 +1,84 @@
+namespace CRM_Revcare_;
+partial class TenantInquiryForm
+{
+    private System.Windows.Forms.Label customerIdLabel;
+    private System.Windows.Forms.ComboBox customerIdInput;
+    private System.Windows.Forms.Label customerNameLabel;
+    private System.Windows.Forms.TextBox customerNameInput;
+    private System.Windows.Forms.Label contactNumberLabel;
+    private System.Windows.Forms.TextBox contactNumberInput;
+    private System.Windows.Forms.Label inquiryPlatformLabel;
+    private System.Windows.Forms.ComboBox inquiryPlatformInput;
+    private System.Windows.Forms.Label messageDetailsLabel;
+    private System.Windows.Forms.TextBox messageDetailsInput;
+    private System.Windows.Forms.Label statusLabel;
+    private System.Windows.Forms.ComboBox statusInput;
+    private void InitializeComponent()
+    {
+        fieldsLayout.SuspendLayout();
+        SuspendLayout();
+        customerIdLabel = new System.Windows.Forms.Label();
+        customerIdInput = new System.Windows.Forms.ComboBox();
+        customerIdLabel.Name = "customerIdLabel"; customerIdLabel.Text = "Existing customer";
+        customerIdLabel.AutoSize = true; customerIdLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        customerIdInput.Name = "customerId"; customerIdInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        customerIdInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        customerIdInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        customerIdInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems; customerIdInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+        customerIdInput.DropDownWidth = 650;
+        fieldsLayout.Controls.Add(customerIdLabel, 0, 0); fieldsLayout.Controls.Add(customerIdInput, 1, 0);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        customerNameLabel = new System.Windows.Forms.Label();
+        customerNameInput = new System.Windows.Forms.TextBox();
+        customerNameLabel.Name = "customerNameLabel"; customerNameLabel.Text = "Unregistered lead name";
+        customerNameLabel.AutoSize = true; customerNameLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        customerNameInput.Name = "customerName"; customerNameInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        customerNameInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        fieldsLayout.Controls.Add(customerNameLabel, 0, 1); fieldsLayout.Controls.Add(customerNameInput, 1, 1);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        contactNumberLabel = new System.Windows.Forms.Label();
+        contactNumberInput = new System.Windows.Forms.TextBox();
+        contactNumberLabel.Name = "contactNumberLabel"; contactNumberLabel.Text = "Unregistered lead contact";
+        contactNumberLabel.AutoSize = true; contactNumberLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        contactNumberInput.Name = "contactNumber"; contactNumberInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        contactNumberInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        fieldsLayout.Controls.Add(contactNumberLabel, 0, 2); fieldsLayout.Controls.Add(contactNumberInput, 1, 2);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        inquiryPlatformLabel = new System.Windows.Forms.Label();
+        inquiryPlatformInput = new System.Windows.Forms.ComboBox();
+        inquiryPlatformLabel.Name = "inquiryPlatformLabel"; inquiryPlatformLabel.Text = "Source *";
+        inquiryPlatformLabel.AutoSize = true; inquiryPlatformLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        inquiryPlatformInput.Name = "inquiryPlatform"; inquiryPlatformInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        inquiryPlatformInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        inquiryPlatformInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        inquiryPlatformInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems; inquiryPlatformInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+        inquiryPlatformInput.DropDownWidth = 650;
+        fieldsLayout.Controls.Add(inquiryPlatformLabel, 0, 3); fieldsLayout.Controls.Add(inquiryPlatformInput, 1, 3);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        messageDetailsLabel = new System.Windows.Forms.Label();
+        messageDetailsInput = new System.Windows.Forms.TextBox();
+        messageDetailsLabel.Name = "messageDetailsLabel"; messageDetailsLabel.Text = "Inquiry notes *";
+        messageDetailsLabel.AutoSize = true; messageDetailsLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        messageDetailsInput.Name = "messageDetails"; messageDetailsInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        messageDetailsInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        messageDetailsInput.Multiline = true; messageDetailsInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical; messageDetailsInput.Height = 120;
+        fieldsLayout.Controls.Add(messageDetailsLabel, 0, 4); fieldsLayout.Controls.Add(messageDetailsInput, 1, 4);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        statusLabel = new System.Windows.Forms.Label();
+        statusInput = new System.Windows.Forms.ComboBox();
+        statusLabel.Name = "statusLabel"; statusLabel.Text = "Response status";
+        statusLabel.AutoSize = true; statusLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        statusInput.Name = "status"; statusInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        statusInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        statusInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        statusInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems; statusInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+        statusInput.DropDownWidth = 650;
+        fieldsLayout.Controls.Add(statusLabel, 0, 5); fieldsLayout.Controls.Add(statusInput, 1, 5);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        fieldsLayout.RowCount = 6;
+        Text = "RevCare Auto Hub CRM";
+        fieldsLayout.ResumeLayout(false); fieldsLayout.PerformLayout();
+        ResumeLayout(false);
+    }
+}
+

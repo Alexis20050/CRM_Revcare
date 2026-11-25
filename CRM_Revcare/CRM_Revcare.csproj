@@ -1,0 +1,80 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>CRM_Revcare_</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CRM.infrastructure\CRM.infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Exclude the spurious Operations resx that conflicts with CrmTransactionsForm.resx -->
+    <EmbeddedResource Remove="CrmTransactionsForm.Operations.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AdminLoginForm.cs;CrmTransactionsForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="Views\*Page.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Update="Views\*DialogForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="Views\InquiryDialogForm.Designer.cs"><DependentUpon>InquiryDialogForm.cs</DependentUpon></Compile>
+    <Compile Update="Views\ComplaintDialogForm.Designer.cs"><DependentUpon>ComplaintDialogForm.cs</DependentUpon></Compile>
+    <Compile Update="Views\FeedbackDialogForm.Designer.cs"><DependentUpon>FeedbackDialogForm.cs</DependentUpon></Compile>
+    <Compile Update="Views\JobOrderPickerDialogForm.Designer.cs"><DependentUpon>JobOrderPickerDialogForm.cs</DependentUpon></Compile>
+    <Compile Update="Views\InquiryPage.Designer.cs"><DependentUpon>InquiryPage.cs</DependentUpon></Compile>
+    <Compile Update="Views\ComplaintPage.Designer.cs"><DependentUpon>ComplaintPage.cs</DependentUpon></Compile>
+    <Compile Update="Views\FeedbackPage.Designer.cs"><DependentUpon>FeedbackPage.cs</DependentUpon></Compile>
+    <Compile Update="Views\JobOrderPage.Designer.cs"><DependentUpon>JobOrderPage.cs</DependentUpon></Compile>
+    <Compile Update="Views\JobTaskPage.Designer.cs"><DependentUpon>JobTaskPage.cs</DependentUpon></Compile>
+    <Compile Update="Views\PaymentPage.Designer.cs"><DependentUpon>PaymentPage.cs</DependentUpon></Compile>
+    <Compile Update="AdminLoginForm.Designer.cs"><DependentUpon>AdminLoginForm.cs</DependentUpon></Compile>
+    <Compile Update="CrmTransactionsForm.Designer.cs"><DependentUpon>CrmTransactionsForm.cs</DependentUpon></Compile>
+    <Compile Update="CrmTransactionsForm.Operations.cs"><DependentUpon>CrmTransactionsForm.cs</DependentUpon><SubType>Code</SubType></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\CustomerPage.Designer.cs"><DependentUpon>CustomerPage.cs</DependentUpon></Compile>
+    <Compile Update="CrmTransactionsForm.Customers.cs"><DependentUpon>CrmTransactionsForm.cs</DependentUpon><SubType>Code</SubType></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\TransactionDialogForm.Designer.cs"><DependentUpon>TransactionDialogForm.cs</DependentUpon></Compile>
+    <Compile Update="CrmTransactionsForm.Dialogs.cs"><DependentUpon>CrmTransactionsForm.cs</DependentUpon><SubType>Code</SubType></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\InquiryConversionDialogForm.Designer.cs"><DependentUpon>InquiryConversionDialogForm.cs</DependentUpon></Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ReportPreviewDialogForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="ReportPreviewDialogForm.Designer.cs"><DependentUpon>ReportPreviewDialogForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantAssignmentForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantAssignmentForm.Designer.cs"><DependentUpon>TenantAssignmentForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantComplaintForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantComplaintForm.Designer.cs"><DependentUpon>TenantComplaintForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantConvertForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantConvertForm.Designer.cs"><DependentUpon>TenantConvertForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantCustomerForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantCustomerForm.Designer.cs"><DependentUpon>TenantCustomerForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantEntryForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantEntryForm.Designer.cs"><DependentUpon>TenantEntryForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantFeedbackForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantFeedbackForm.Designer.cs"><DependentUpon>TenantFeedbackForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantInquiryForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantInquiryForm.Designer.cs"><DependentUpon>TenantInquiryForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantJobOrderForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantJobOrderForm.Designer.cs"><DependentUpon>TenantJobOrderForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantPaymentForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantPaymentForm.Designer.cs"><DependentUpon>TenantPaymentForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantServiceForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantServiceForm.Designer.cs"><DependentUpon>TenantServiceForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantStaffForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantStaffForm.Designer.cs"><DependentUpon>TenantStaffForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantTaskForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantTaskForm.Designer.cs"><DependentUpon>TenantTaskForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantTaskReviewForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantTaskReviewForm.Designer.cs"><DependentUpon>TenantTaskReviewForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantVoidForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantVoidForm.Designer.cs"><DependentUpon>TenantVoidForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantWorkspaceForm.cs"><SubType>Form</SubType></Compile>
+    <Compile Update="TenantWorkspaceForm.Designer.cs"><DependentUpon>TenantWorkspaceForm.cs</DependentUpon></Compile>
+    <Compile Update="TenantWorkspaceForm.Workshop.cs"><DependentUpon>TenantWorkspaceForm.cs</DependentUpon><SubType>Code</SubType></Compile>
+  </ItemGroup>
+</Project>

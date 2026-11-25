@@ -1,0 +1,42 @@
+# Generated build files
+**/bin/
+**/obj/
+
+# Visual Studio caches and personal preferences
+**/.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Temporary diagnostics
+*.dmp
+*.tmp
+*.bak
+
+# Local evidence, customer-data exports, backups and generated reports
+/artifacts/
+/backups/
+/scratch/
+/screenshots/
+*.log
+*.bacpac
+*.mdf
+*.ldf
+*.ndf
+*.trn
+*.dmp
+
+# Machine credentials and local configuration
+.env
+.env.*
+!.env.example
+**/secrets.json
+**/appsettings.Local.json
+/CRM.api/appsettings.Development.json
+*.pfx
+*.p12
+*.key
+
+# Generated UI test captures
+/tests/Tenant.Ui/workshop.png

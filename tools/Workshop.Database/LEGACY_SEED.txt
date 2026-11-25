@@ -1,0 +1,35 @@
+Legacy fictional dataset
+========================
+Command (after building the project in Release):
+dotnet tools/Workshop.Database/bin/Release/net10.0-windows/Workshop.Database.dll --seed-legacy --apply
+
+Without --apply, the utility only prints targets and current counts.
+
+Targets: local DB_MasterCrm and the legacy application connection, restricted to
+DB_MasterCrm or db80735. Platform Master and Tenant A are not seeded.
+
+Adds 200 Customers, Inquiries, JobOrders, JobTasks, Payments, Complaints and
+Feedbacks to EACH distinct target, preserving existing records. Also adds five
+fictional workshop staff profiles (not login accounts). Totals may exceed 200.
+
+All records are fictional. Names and vehicle models are plausible; email uses
+the reserved .example domain and phone numbers contain XX to avoid contacting
+real people. No email or SMS is sent.
+
+Each batch has 50 jobs in each of the four lifecycle stages. Queued and active
+jobs have a 50% deposit, while completed/released jobs are paid in full. Every
+job has one service task and a converted inquiry. Completed jobs have two
+feedback responses each. Twenty low ratings generate urgent complaints; the
+other 180 complaints cover reception, communication and quotation issues.
+
+The tool uses the normal EF Core domain rules, including staff eligibility,
+deposit checks, inspection confirmation, payment validation and audit logging.
+Database identities and estimate/receipt numbering are generated normally.
+
+Each database batch is atomic, protected by a transaction-owned application
+lock. A completion audit marker prevents duplicate insertion on reruns or
+ambiguous commit retries. The two databases commit independently.
+
+Before committing, the tool checks the 200-per-module counts, completed task
+states and released payment balances, then repeats verification after commit.
+Pending migrations or unexpected database names stop execution.

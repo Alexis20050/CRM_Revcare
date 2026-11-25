@@ -1,0 +1,81 @@
+PRODUCTION DEPLOYMENT STOP/GO CHECKLIST — ALL GATES REQUIRE RECORDED EVIDENCE
+Current decision: NO GO. No cloud deployment or recovery is authorized.
+An unchecked gate is a blocker. Review sign-off alone is not write authorization.
+
+[ ] 1. Business scope and source identity — Owner / finance lead
+    Approve the compatibility policy, review responsibilities, original-total billing
+    basis, treatment of fictional seed rows and evidence standards. Record exact
+    source server/database and the approved release scope. Keep db81188 and db81189
+    excluded. Do not bundle historical corrections with a compatibility release.
+
+[ ] 2. Actual provider backup obtained — Account owner / DBA
+    Obtain an actual existing MonsterASP.NET native backup through authorized account
+    access; if none exists, obtain separate authority before creating one. Preserve
+    source account/database identity, backup time/timezone, file size and SHA-256.
+    Check real plan/retention/download access; do not assume slot counts or retention.
+    A local synthetic .bak, selective JSON copy or BACPAC is not acceptable evidence.
+    Current status: no provider artifact downloaded; BLOCKED.
+
+[ ] 3. Backup identity and compatibility — DBA
+    On a local instance inspect RESTORE HEADERONLY and FILELISTONLY. Confirm original
+    database db80735, provider server identity, backup type, backup set position and
+    recovery cutoff. Confirm engine-version support and required backup encryption
+    material, if applicable. Retain output and artifact hash. Reject local-origin or
+    ambiguous artifacts; a filename alone proves nothing.
+
+[ ] 4. Successful isolated restore — DBA / independent verifier
+    Run VERIFYONLY WITH CHECKSUM where supported; do not equate VERIFYONLY with a
+    restore test. Restore the actual provider artifact to a NEW uniquely named local
+    database using MOVE for every logical file. Never DROP/REPLACE an existing database;
+    never restore over db80735, db81188 or db81189. Record elapsed restore time and
+    destination. Run DBCC CHECKDB and retain all results. Any failure is NO GO.
+    Current status: no actual provider restore tested; BLOCKED.
+
+[ ] 5. Restored financial and schema validation — Finance / DBA
+    Compare keys, row counts, schema/migration history, constraints, task values,
+    original job totals, receipt amounts/IDs/void state, estimate links, source
+    references and audit history against a consistent baseline at the backup cutoff.
+    Do not demand current counts from an older backup without reconciling changes.
+    Recorded snapshot reference: 400 jobs, 603 tasks, 400 receipts, nonvoid receipt
+    total PHP 938,050.00; 154 estimates, 300 lines. These are evidence values for the
+    saved snapshot, not a substitute for a timed production baseline.
+
+[ ] 6. Approve recovery objectives and procedure — Owner / DBA
+    Record tested RTO, accepted RPO, retention and off-provider availability; all are
+    currently unverified. Document login/configuration/permissions recovery. Do not
+    claim point-in-time recovery from SIMPLE mode or assume a transaction-log chain.
+    Any production restore requires its own explicit authorization and data-loss review.
+
+[ ] 7. Validate exact release candidate — Engineering / QA
+    Build and test immutable candidate artifacts. On the restored disposable copy
+    rerun actual service interruption/retry/concurrency/financial preservation and
+    historical customer/receipt/report usability checks. Verify protected inventory
+    scope against current keys. Never substitute a local mutation probe for tests of
+    the actual writer. The current reconciliation is read-only; introducing writes
+    requires new atomicity tests, evidence rules and separate authorization.
+
+[ ] 8. Close write-bypass risks — Engineering / operations
+    Review direct SQL/bulk-import permissions, old running clients, scheduled jobs,
+    migration/seeding startup behavior and legacy Customer/Deposit database defaults.
+    Confirm no automatic catalog backfill or inferred approval can run at startup.
+    Keep ordinary historical editing guards active. Protect evidence/report access.
+
+[ ] 9. Review rollback and monitoring — Engineering / DBA
+    Define code rollback separately from data restoration. Do not drop historical
+    columns/links as a recovery plan. Specify post-release reconciliation of unchanged
+    originals, error monitoring and stop criteria. Rehearse on disposable copies.
+
+[ ] 10. Obtain explicit deployment authorization — Authorized owner
+    Record who authorizes precisely which target, release artifact, maintenance window
+    and actions. Backup verification and business review do not imply this permission.
+    No approval is presently recorded. Do not execute production reconciliation.
+
+[ ] 11. Authorized cutover and acceptance — Operations / finance
+    Only after gates 1–10: follow the separately approved runbook, check resolved target
+    before each operation, and validate customer history, recorded totals, receipt
+    rendering and qualified estimates without repairing discrepancies automatically.
+    Stop on unexpected drift; obtain separate approval for any financial correction.
+
+Provider facility references (not proof of this account's backup readiness):
+https://help.monsterasp.net/databases/mssql/backup
+https://help.monsterasp.net/databases/mssql/restore

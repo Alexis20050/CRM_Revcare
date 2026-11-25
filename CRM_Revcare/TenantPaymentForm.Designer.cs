@@ -1,0 +1,87 @@
+namespace CRM_Revcare_;
+partial class TenantPaymentForm
+{
+    private System.Windows.Forms.Label billingSummary;
+    private System.Windows.Forms.Button depositButton, balanceButton;
+    private System.Windows.Forms.FlowLayoutPanel billingActions;
+    private System.Windows.Forms.Label jobOrderIdLabel;
+    private System.Windows.Forms.ComboBox jobOrderIdInput;
+    private System.Windows.Forms.Label paymentTypeLabel;
+    private System.Windows.Forms.ComboBox paymentTypeInput;
+    private System.Windows.Forms.Label amountPaidLabel;
+    private System.Windows.Forms.TextBox amountPaidInput;
+    private System.Windows.Forms.Label paymentMethodLabel;
+    private System.Windows.Forms.ComboBox paymentMethodInput;
+    private System.Windows.Forms.Label allowCustomerCreditLabel;
+    private System.Windows.Forms.CheckBox allowCustomerCreditInput;
+    private void InitializeComponent()
+    {
+        fieldsLayout.SuspendLayout();
+        SuspendLayout();
+        jobOrderIdLabel = new System.Windows.Forms.Label();
+        jobOrderIdInput = new System.Windows.Forms.ComboBox();
+        jobOrderIdLabel.Name = "jobOrderIdLabel"; jobOrderIdLabel.Text = "Job order *";
+        jobOrderIdLabel.AutoSize = true; jobOrderIdLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        jobOrderIdInput.Name = "jobOrderId"; jobOrderIdInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        jobOrderIdInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        jobOrderIdInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        jobOrderIdInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems; jobOrderIdInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+        jobOrderIdInput.DropDownWidth = 650;
+        fieldsLayout.Controls.Add(jobOrderIdLabel, 0, 0); fieldsLayout.Controls.Add(jobOrderIdInput, 1, 0);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        paymentTypeLabel = new System.Windows.Forms.Label();
+        paymentTypeInput = new System.Windows.Forms.ComboBox();
+        paymentTypeLabel.Name = "paymentTypeLabel"; paymentTypeLabel.Text = "Payment type *";
+        paymentTypeLabel.AutoSize = true; paymentTypeLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        paymentTypeInput.Name = "paymentType"; paymentTypeInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        paymentTypeInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        paymentTypeInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        paymentTypeInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems; paymentTypeInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+        paymentTypeInput.DropDownWidth = 650;
+        fieldsLayout.Controls.Add(paymentTypeLabel, 0, 1); fieldsLayout.Controls.Add(paymentTypeInput, 1, 1);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        amountPaidLabel = new System.Windows.Forms.Label();
+        amountPaidInput = new System.Windows.Forms.TextBox();
+        amountPaidLabel.Name = "amountPaidLabel"; amountPaidLabel.Text = "Amount paid *";
+        amountPaidLabel.AutoSize = true; amountPaidLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        amountPaidInput.Name = "amountPaid"; amountPaidInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        amountPaidInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        fieldsLayout.Controls.Add(amountPaidLabel, 0, 2); fieldsLayout.Controls.Add(amountPaidInput, 1, 2);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        paymentMethodLabel = new System.Windows.Forms.Label();
+        paymentMethodInput = new System.Windows.Forms.ComboBox();
+        paymentMethodLabel.Name = "paymentMethodLabel"; paymentMethodLabel.Text = "Payment method *";
+        paymentMethodLabel.AutoSize = true; paymentMethodLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        paymentMethodInput.Name = "paymentMethod"; paymentMethodInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        paymentMethodInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        paymentMethodInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        paymentMethodInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems; paymentMethodInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+        paymentMethodInput.DropDownWidth = 650;
+        fieldsLayout.Controls.Add(paymentMethodLabel, 0, 3); fieldsLayout.Controls.Add(paymentMethodInput, 1, 3);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        allowCustomerCreditLabel = new System.Windows.Forms.Label();
+        allowCustomerCreditInput = new System.Windows.Forms.CheckBox();
+        allowCustomerCreditLabel.Name = "allowCustomerCreditLabel"; allowCustomerCreditLabel.Text = "Allow customer credit";
+        allowCustomerCreditLabel.AutoSize = true; allowCustomerCreditLabel.Margin = new System.Windows.Forms.Padding(3, 10, 10, 8);
+        allowCustomerCreditInput.Name = "allowCustomerCredit"; allowCustomerCreditInput.Dock = System.Windows.Forms.DockStyle.Fill;
+        allowCustomerCreditInput.Margin = new System.Windows.Forms.Padding(3, 6, 3, 8);
+        fieldsLayout.Controls.Add(allowCustomerCreditLabel, 0, 4); fieldsLayout.Controls.Add(allowCustomerCreditInput, 1, 4);
+        fieldsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
+        billingSummary = new System.Windows.Forms.Label(); billingSummary.Name = "billingSummary";
+        billingSummary.AutoSize = true; billingSummary.Padding = new System.Windows.Forms.Padding(6, 12, 6, 12);
+        billingSummary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+        billingSummary.Text = "Select a job to view its billing summary.";
+        billingActions = new System.Windows.Forms.FlowLayoutPanel(); billingActions.AutoSize = true; billingActions.Dock = System.Windows.Forms.DockStyle.Fill;
+        depositButton = new System.Windows.Forms.Button(); balanceButton = new System.Windows.Forms.Button();
+        depositButton.Text = "Record downpayment"; depositButton.AutoSize = true;
+        balanceButton.Text = "Pay remaining balance"; balanceButton.AutoSize = true;
+        billingActions.Controls.Add(depositButton); billingActions.Controls.Add(balanceButton);
+        fieldsLayout.Controls.Add(billingSummary, 0, 5); fieldsLayout.SetColumnSpan(billingSummary, 2);
+        fieldsLayout.Controls.Add(billingActions, 0, 6); fieldsLayout.SetColumnSpan(billingActions, 2);
+        fieldsLayout.RowCount = 7;
+        Text = "RevCare Auto Hub CRM";
+        fieldsLayout.ResumeLayout(false); fieldsLayout.PerformLayout();
+        ResumeLayout(false);
+    }
+}
+

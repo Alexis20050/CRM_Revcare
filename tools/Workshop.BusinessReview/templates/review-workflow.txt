@@ -1,0 +1,52 @@
+PROPOSED HISTORICAL REVIEW WORKFLOW — INSPECTION ONLY
+
+Available now: static read-only HTML/JSON report. Authentication, assignment, evidence
+upload and approval persistence described below are proposals, not deployed features.
+
+Roles
+- Authorized service advisor: inspect customer/job history; locate original records;
+  document customer enquiries. Cannot change historical financial assertions.
+- Workshop manager: corroborate service/job identity and original work documentation.
+- Finance reviewer: assess authoritative totals, receipt history and discrepancies.
+- Business owner/designated approver: approve evidence standards, reporting policy
+  and separately scoped correction proposals. Do not self-approve financial changes.
+
+Inspection screen/report
+1. Open a job by its actual source database + JobOrderId; show customer/status and
+   original reference. Show estimate link as stored, including an unlinked source
+   association when applicable. Never generate a link because names/totals match.
+2. Display three distinct figures: authoritative recorded job total; stored estimate
+   total; existing itemized sum. Show signed difference and original receipts. Keep
+   nonvoid paid, balance and credit calculated against the original job total.
+3. Show separate badges for evidence class, approval provenance and arithmetic status.
+   Reconstructed, verified historical, and unresolved legacy are not interchangeable.
+4. Display source keys, line IDs, backfill note, original reference text, timestamp
+   equality warning, and exact audit references. Mark missing evidence Unknown.
+5. Offer view/print/evidence-inspection only. No reprice, approve estimate, classify
+   payment, create missing transaction, relink or synchronize-finances action.
+
+Future decision record (outside operational financial rows)
+Source database; entity type/key; source snapshot hash; issue/category; source
+document identifier/hash; reviewer identity; reviewer time; independently evidenced
+historical approval time (nullable); evidence assessment; proposed action; reason;
+independent approver; decision/version; prior decision reference. Preserve original
+assertions and attach amendments instead of overwriting history.
+
+Suggested review states
+Awaiting evidence -> Evidence received -> Independently reviewed.
+Possible outcomes: unresolved legacy retained; arithmetic discrepancy retained with
+qualification; historical evidence verified; separately scoped correction proposed.
+No state transition automatically changes prices, totals, receipts, payer identity,
+estimate approval/link or job status. Reviewed does not mean historically approved.
+An accepted unresolved legacy record can remain usable indefinitely.
+
+Current register state
+Every review remains Not reviewed by business; Reviewer/Decision are unassigned.
+No owner, signature, approval date or historical agreement has been invented.
+
+Controlled access
+Distribute this customer-bearing package through an existing access-controlled share
+to authorized staff. The static files have no login/authorization implementation.
+Any future hosted review feature must enforce server-side read permissions, minimum
+necessary data access, evidence retention, review audit logging and separation of
+review from operational write permissions. Hosting/deployment is not authorized here.
